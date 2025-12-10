@@ -38,7 +38,10 @@ export default function AdditionalCapabilitiesSection() {
           >
             <span
               className="material-symbols-outlined rounded-full p-3"
-              style={{ backgroundColor: "rgba(122, 191, 90, 0.1)", color: "#7ABF5A" }}
+              style={{
+                backgroundColor: "rgba(122, 191, 90, 0.1)",
+                color: "#7ABF5A",
+              }}
             >
               {item.icon}
             </span>
