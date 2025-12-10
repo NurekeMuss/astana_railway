@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Astana Railway Group - B2B Agrarian Distributor
 
-## Getting Started
+Веб-сайт для компании Astana Railway Group - дистрибьютора свежих тепличных овощей и фруктов из Казахстана.
 
-First, run the development server:
+## 🚀 Технологии
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Next.js 15** - React framework для продакшена
+- **TypeScript** - типизированный JavaScript
+- **Tailwind CSS** - утилитарный CSS framework
+- **Google Fonts** - Manrope и Material Symbols
+
+## 📁 Структура проекта
+
+```
+astana-railway/
+├── app/
+│   ├── layout.tsx          # Корневой layout с метаданными
+│   ├── page.tsx            # Главная страница
+│   └── globals.css         # Глобальные стили
+├── components/
+│   ├── Header.tsx          # Шапка сайта
+│   ├── Footer.tsx          # Подвал сайта
+│   └── sections/           # Секции страницы
+│       ├── HeroSection.tsx
+│       ├── AboutSection.tsx
+│       ├── ProductionCapacitiesSection.tsx
+│       ├── CapabilitiesSection.tsx
+│       ├── AssortmentSection.tsx
+│       ├── DeliveryConditionsSection.tsx
+│       ├── AdditionalCapabilitiesSection.tsx
+│       ├── AdvantagesSection.tsx
+│       ├── PartnersSection.tsx
+│       └── ContactsSection.tsx
+├── public/                 # Статические файлы
+├── tailwind.config.ts      # Конфигурация Tailwind
+├── next.config.ts          # Конфигурация Next.js
+└── tsconfig.json           # Конфигурация TypeScript
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎨 Архитектура
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Проект разбит на переиспользуемые компоненты по принципу **Atomic Design**:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Layout** - корневая обертка с метаданными и шрифтами
+- **Page** - главная страница, импортирующая все секции
+- **Components** - переиспользуемые UI компоненты (Header, Footer)
+- **Sections** - отдельные секции страницы с данными
 
-## Learn More
+## 🎨 Стилизация
 
-To learn more about Next.js, take a look at the following resources:
+- Tailwind CSS с кастомными цветами брендбука:
+  - `primary`: #1F4D2B (темно-зеленый)
+  - `secondary`: #7ABF5A (светло-зеленый)
+  - `accent-red`: #D5433A
+  - `accent-yellow`: #F2C94C
+- Google Material Symbols для иконок
+- Шрифт Manrope (400, 500, 700, 800)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ Установка и запуск
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+# Установка зависимостей
+npm install
 
-## Deploy on Vercel
+# Запуск dev сервера
+npm run dev
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Сборка для продакшена
+npm run build
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Запуск продакшн версии
+npm start
+```
+
+Откройте [http://localhost:3000](http://localhost:3000) в браузере.
+
+## 📝 Основные секции
+
+1. **Hero** - главный баннер с призывом к действию
+2. **О компании** - преимущества и особенности
+3. **Производственные мощности** - статистика партнеров
+4. **Возможности** - список услуг
+5. **Ассортимент** - каталог продукции с изображениями
+6. **Условия доставки** - логистика и сервис
+7. **Дополнительные возможности** - доп. услуги
+8. **Преимущества** - ключевые УТП
+9. **Партнеры** - логотипы клиентов
+10. **Контакты** - форма обратной связи
+
+## 🌐 Развертывание
+
+Проект готов к развертыванию на Vercel:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/astana-railway)
+
+Или на любом другом хостинге с поддержкой Next.js.
+
+## 📄 Лицензия
+
+© 2024 Astana Railway Group. Все права защищены.
