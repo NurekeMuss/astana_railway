@@ -46,11 +46,11 @@ export default function ContactsSection() {
           </p>
           <div className="space-y-3 text-base font-medium">
             <a
-              href="tel:+77787099971"
+              href="tel:+77778812733"
               className="flex items-center gap-3 transition-opacity hover:opacity-85"
             >
               <span className="material-symbols-outlined text-white">call</span>
-              <span>+7 778 709 99 71</span>
+              <span>+7 777 881 2733</span>
             </a>
             <a
               href="mailto:arg_trading@mail.ru"
@@ -116,7 +116,7 @@ export default function ContactsSection() {
                 backgroundColor: "#ffffff",
                 color: "#1A1A1A",
               }}
-              placeholder="+7 778 709 99 71"
+              placeholder="+7 777 881 2733"
             />
             {errors.phone && (
               <p className="text-xs" style={{ color: "#D5433A" }}>

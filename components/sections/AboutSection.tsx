@@ -1,10 +1,5 @@
 const features = [
   {
-    icon: "verified",
-    title: "20+ лет опыта",
-    description: "Глубокая экспертиза в аграрной логистике и дистрибуции.",
-  },
-  {
     icon: "handshake",
     title: "Прямые контракты",
     description:
@@ -37,7 +32,7 @@ export default function AboutSection() {
           прозрачные условия сотрудничества на каждом этапе.
         </p>
       </div>
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {features.map((feature, index) => (
           <div
             key={index}
