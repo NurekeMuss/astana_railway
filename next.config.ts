@@ -32,6 +32,22 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "elaba24.kz",
       },
+      {
+        protocol: "https",
+        hostname: "yuzhni-group.kz",
+      },
+      {
+        protocol: "https",
+        hostname: "selprom.kz",
+      },
+      {
+        protocol: "https",
+        hostname: "vkusmart.vmv.kz",
+      },
+      {
+        protocol: "https",
+        hostname: "dairynews.ru",
+      },
     ],
   },
 };
