@@ -53,11 +53,11 @@ export default function ContactsSection() {
               <span>+7 777 881 2733</span>
             </a>
             <a
-              href="mailto:arg_trading@mail.ru"
+              href="mailto:info@argt.kz"
               className="flex items-center gap-3 transition-opacity hover:opacity-85"
             >
               <span className="material-symbols-outlined text-white">mail</span>
-              <span>arg_trading@mail.ru</span>
+              <span>info@argt.kz</span>
             </a>
           </div>
         </div>
