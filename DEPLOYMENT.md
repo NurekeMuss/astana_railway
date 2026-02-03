@@ -29,7 +29,7 @@ docker-compose up -d
 docker-compose logs -f
 ```
 
-Сайт будет доступен на `http://localhost` или `http://your-server-ip`
+Сайт будет доступен на `http://172.210.68.73`
 
 ## Настройка домена и SSL
 
