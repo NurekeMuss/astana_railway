@@ -2,6 +2,7 @@
 
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import { useState } from "react";
 
 interface FormData {
   name: string;
@@ -10,6 +11,7 @@ interface FormData {
 }
 
 export default function ContactsSection() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const {
     register,
     handleSubmit,
@@ -17,16 +19,39 @@ export default function ContactsSection() {
     formState: { errors },
   } = useForm<FormData>();
 
-  const onSubmit = (data: FormData) => {
-    console.log("Form submitted:", data);
-    Swal.fire({
-      title: "Успешно!",
-      text: "Заявка отправлена! Мы свяжемся с вами в ближайшее время.",
-      icon: "success",
-      confirmButtonText: "Хорошо",
-      confirmButtonColor: "#1F4D2B",
-    });
-    reset();
+  const onSubmit = async (data: FormData) => {
+    try {
+      setIsSubmitting(true);
+      const response = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error("Request failed");
+      }
+
+      Swal.fire({
+        title: "Успешно!",
+        text: "Заявка отправлена! Мы свяжемся с вами в ближайшее время.",
+        icon: "success",
+        confirmButtonText: "Хорошо",
+        confirmButtonColor: "#1F4D2B",
+      });
+      reset();
+    } catch (error) {
+      console.error("Lead submit error:", error);
+      Swal.fire({
+        title: "Ошибка",
+        text: "Не удалось отправить заявку. Попробуйте позже.",
+        icon: "error",
+        confirmButtonText: "Понятно",
+        confirmButtonColor: "#D5433A",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -151,10 +176,11 @@ export default function ContactsSection() {
           </div>
           <button
             type="submit"
-            className="mt-2 flex h-12 w-full cursor-pointer items-center justify-center rounded-lg px-5 text-base font-bold leading-normal text-white transition-colors hover:opacity-90"
+            className="mt-2 flex h-12 w-full cursor-pointer items-center justify-center rounded-lg px-5 text-base font-bold leading-normal text-white transition-colors hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
             style={{ backgroundColor: "#1F4D2B" }}
+            disabled={isSubmitting}
           >
-            Отправить заявку
+            {isSubmitting ? "Отправка..." : "Отправить заявку"}
           </button>
         </form>
       </div>

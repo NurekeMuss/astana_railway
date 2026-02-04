@@ -4,7 +4,7 @@ const products = {
   tomatoes: [
     {
       name: "Томат Биф",
-      image: "/images/ТОМАТ_БИФ_(БЫЧЬЕ СЕРДЦЕ).png",
+      image: "/images/ТОМАТ_БИФ.png",
       alt: "Close-up of a large red beef tomato",
     },
     {
